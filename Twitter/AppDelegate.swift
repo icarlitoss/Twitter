@@ -13,7 +13,7 @@ import BDBOAuth1Manager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if User.currentUser != nil {
              // Got to the logged in screen
             print("Current user detected: \(User.currentUser?.name)")
+            
+            var vc =
+            
+            storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
+            
+            window?.rootViewController = vc
+            
+            
         }
         
         
