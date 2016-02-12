@@ -46,7 +46,6 @@
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogout:" destination="jj0-2B-tiC" eventType="touchUpInside" id="uS4-DQ-kSe"/>
-                                    <segue destination="BYZ-38-t0r" kind="modal" id="IrO-SJ-y8k"/>
                                 </connections>
                             </button>
                         </subviews>
