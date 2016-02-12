@@ -11,15 +11,14 @@ import BDBOAuth1Manager
 import AFNetworking
 
 class ViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         
-       
-        
-        
+    
         
         
     }
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
 
     @IBAction func onLogin(sender: AnyObject) {
           TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
-        TwitterClient.sharedInstance.fetchRequestWithToken("oauth/request_token", method: "GET", callbackURL: NSURL(string: "ctptwitterCarlos://oauth"), scope: nil, success: {(requestToken: BDBOAuth1Credential!) -> Void in print("Got the request token")})
+        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "ctptwitterCarlos://oauth"), scope: nil, success: {(requestToken: BDBOAuth1Credential!) -> Void in print("Got the request token")})
             { (error: NSError!) ->Void in
                 print("Error gettin the request token: \(error)")
         }

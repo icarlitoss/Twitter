@@ -17,7 +17,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     class var sharedInstance: TwitterClient {
         struct Static{
-            static let instance =  TwitterClient(baseUrl: twitterBaseURL ,consumerKey: twitterConsumerKey , consumerSecret: twitterConsumerSecret)
+            static let instance =  TwitterClient(baseURL: twitterBaseURL ,consumerKey: twitterConsumerKey , consumerSecret: twitterConsumerSecret)
         }
         return Static.instance
     }
