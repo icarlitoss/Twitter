@@ -16,6 +16,7 @@
 		BC7654F71C6D606F0001D520 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7654F61C6D606F0001D520 /* TwitterClient.swift */; };
 		BCFDFD121C6DCE3F002079B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDFD111C6DCE3F002079B7 /* User.swift */; };
 		BCFDFD141C6DCE5D002079B7 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDFD131C6DCE5D002079B7 /* Tweet.swift */; };
+		BCFDFD161C6DEC09002079B7 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDFD151C6DEC09002079B7 /* TweetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BC7654F61C6D606F0001D520 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		BCFDFD111C6DCE3F002079B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BCFDFD131C6DCE5D002079B7 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		BCFDFD151C6DEC09002079B7 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		F489E5B77103AE9C80352BA8 /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				BC43D28A1C6D5DD300B22EBC /* Assets.xcassets */,
 				BC43D28C1C6D5DD300B22EBC /* LaunchScreen.storyboard */,
 				BC43D28F1C6D5DD300B22EBC /* Info.plist */,
+				BCFDFD151C6DEC09002079B7 /* TweetsViewController.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				BCFDFD121C6DCE3F002079B7 /* User.swift in Sources */,
 				BCFDFD141C6DCE5D002079B7 /* Tweet.swift in Sources */,
+				BCFDFD161C6DEC09002079B7 /* TweetsViewController.swift in Sources */,
 				BC43D2861C6D5DD300B22EBC /* ViewController.swift in Sources */,
 				BC7654F71C6D606F0001D520 /* TwitterClient.swift in Sources */,
 				BC43D2841C6D5DD300B22EBC /* AppDelegate.swift in Sources */,

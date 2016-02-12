@@ -10,6 +10,8 @@ import UIKit
 
 var _currentUser: User?
 let currentUserKey = "kCurrentUserKey"
+let userDidLoginNotification = "userDidLoginNotification"
+let userDidLogoutNotification = "userDidLoginNotification"
 
 
 class User: NSObject {
@@ -28,36 +30,17 @@ class User: NSObject {
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
     }
-    
-    /*****************************
-    class var currentUser: User? {
-        get {
-            if _currentUser == nil{
-                var data = NSUserDefaults.standardUserDefaults().objectForKey(currentUserKey) as? NSData
-                if data != nil {
-        var dictionary  = NSJSONSerialization.JSONObjectWithData(data!, options: nil) as NSDictionary
-        _currentUser = User(dictionary: dictionary)
-            }
-        }
-            return _currentUser
-        }
-        set(user) {
-            _currentUser = user
-            
-            if _currentUser != nil {
-                var data = NSJSONSerialization.dataWithJSONObject(user!.dictionary, options: nil)
-                NSUserDefaults.standardUserDefaults().setObject(data, forKey: currentUserKey)
-                NSUserDefaults.standardUserDefaults().synchronize()
-            } else {
-                 NSUserDefaults.standardUserDefaults().setObject(nil, forKey: currentUserKey)
-            
-            }
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-    
-    
+    //setting up the logout function
+    func logout() {
+        User.currentUser = nil
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(userDidLoginNotification, object: nil)
+        
     }
-    ***********/
+    //finishing the logout function
+    
+    
     
     class var currentUser: User? {
         get {
