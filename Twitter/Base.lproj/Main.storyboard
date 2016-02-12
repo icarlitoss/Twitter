@@ -41,11 +41,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0og-VQ-f19">
-                                <rect key="frame" x="136" y="138" width="48" height="30"/>
+                                <rect key="frame" x="136" y="139" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogout:" destination="jj0-2B-tiC" eventType="touchUpInside" id="uS4-DQ-kSe"/>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="IrO-SJ-y8k"/>
                                 </connections>
                             </button>
                         </subviews>
