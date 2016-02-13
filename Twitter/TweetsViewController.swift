@@ -8,19 +8,33 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets: [Tweet]?
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: {
-            (tweets,error) -> () in
-            self.tweets = tweets
-        })
+        
+        //adding the tableview
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
+        tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+        TwitterClient.sharedInstance.homeTimelineWithParams(nil) { (tweets, error) -> () in
+            self.tweets = tweets;
+            
+            self.tableView.reloadData();
+            
+        }
         
         
     }
@@ -29,6 +43,42 @@ class TweetsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //tvds (tableview data source implementation)
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tweets != nil {
+            return tweets!.count
+        } else {
+            return 0
+        }
+    }
+    
+    
+    
+    func testTweets() {
+        let tweet = tweets![0];
+        print(tweet.user!.name);
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("TweetsCell", forIndexPath: indexPath) as! TweetsCell
+        
+        cell.profileImage.setImageWithURL(NSURL(string: tweets![indexPath.row].user!.profileImageUrl!)!);
+        cell.userName.text = tweets![indexPath.row].user!.name!;
+        cell.userHandle.text = tweets![indexPath.row].user!.screenname!;
+        cell.tweetContentText.text = tweets![indexPath.row].text!;
+        cell.createdTime.text = tweets![indexPath.row].createdAtString!;
+        
+        return cell;
+    }
+    
+    //tvds ends here
+    
+    
+    
+    
+    
     
     
     
