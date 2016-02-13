@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             var vc =
             
-            storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
+            storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
             
             window?.rootViewController = vc
             
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func userDidLogout(){
         var vc =
         
-        storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
+        storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
         
         window?.rootViewController = vc
         

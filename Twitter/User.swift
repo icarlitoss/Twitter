@@ -37,6 +37,8 @@ class User: NSObject {
         
         NSNotificationCenter.defaultCenter().postNotificationName(userDidLoginNotification, object: nil)
         
+        
+        
     }
     //finishing the logout function
     
