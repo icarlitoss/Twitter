@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func userDidLogout(){
         let vc =
         
-        storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
+        storyboard.instantiateInitialViewController()!
         
         window?.rootViewController = vc
 
