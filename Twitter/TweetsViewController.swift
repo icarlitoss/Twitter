@@ -112,6 +112,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
+        
+        //to add the segue from home to login
+        self.performSegueWithIdentifier("logoutSegue", sender: self)
+        
     }
     
     

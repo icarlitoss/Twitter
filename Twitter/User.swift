@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import BDBOAuth1Manager
+
+/*var to make the segue from logout(home to loginNagivationController
+var window: UIWindow?
+var storyboard = UIStoryboard(name: "Main", bundle: nil)
+*/
+
 
 var _currentUser: User?
 let currentUserKey = "kCurrentUserKey"
@@ -39,7 +46,19 @@ class User: NSObject {
         
         
         
+        /*
+        //making  segue from logout(home) to loginNavigation
+        
+        var vc =
+        
+        storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
+        
+        window?.rootViewController = vc
+        
+        */
     }
+    
+    
     //finishing the logout function
     
     
