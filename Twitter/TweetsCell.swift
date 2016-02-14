@@ -20,9 +20,19 @@ class TweetsCell: UITableViewCell {
 
     @IBOutlet weak var createdTime: UILabel!
     
+    //  (#5R) Added the Oulets for the retweet & favorite
+    
+    @IBOutlet weak var replyImageView: UIButton!
 
+    @IBOutlet weak var retweetImageView: UIButton!
     
+    @IBOutlet weak var likeImageView: UIButton!
     
+    @IBOutlet weak var retweetCountLabel: UILabel!
+    
+    @IBOutlet weak var favCountLabel: UILabel!
+    
+    // (#5R) Done adding the retweet & favorite outlets
     
     
     override func awakeFromNib() {

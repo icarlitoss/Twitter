@@ -51,7 +51,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetsCell" rowHeight="159" id="M8a-iz-kJC" customClass="TweetsCell" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="159"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8a-iz-kJC" id="sxu-wf-rHh">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
@@ -164,7 +164,12 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="createdTime" destination="g1K-9h-MyP" id="23b-Dx-saT"/>
+                                            <outlet property="favCountLabel" destination="DHL-Nd-BXf" id="UTb-e7-LUL"/>
+                                            <outlet property="likeImageView" destination="3AT-a3-pzn" id="xj3-XK-NqD"/>
                                             <outlet property="profileImage" destination="Zsj-Cf-cKb" id="GRY-1I-ZX7"/>
+                                            <outlet property="replyImageView" destination="6Ha-UF-yXh" id="5Wx-BY-7ai"/>
+                                            <outlet property="retweetCountLabel" destination="Gs2-tW-IuJ" id="oPa-4h-6bT"/>
+                                            <outlet property="retweetImageView" destination="Mi5-y7-aHe" id="HhH-Ub-D14"/>
                                             <outlet property="tweetContentText" destination="aWU-ZS-0HC" id="thk-G9-suN"/>
                                             <outlet property="userHandle" destination="fyh-ts-1qI" id="mPN-N0-6bG"/>
                                             <outlet property="userName" destination="Gc6-hY-44s" id="S3Z-XF-QXX"/>
@@ -244,7 +249,7 @@
         <image name="retweet-action-inactive" width="75" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3sK-bx-mWY"/>
+        <segue reference="woO-oM-dAH"/>
         <segue reference="s2e-n4-nSo"/>
     </inferredMetricsTieBreakers>
 </document>

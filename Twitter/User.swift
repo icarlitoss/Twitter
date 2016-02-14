@@ -29,6 +29,9 @@ class User: NSObject {
     var tagline: String?
     var dictionary: NSDictionary
     
+    
+
+    
     init(dictionary: NSDictionary){
         self.dictionary = dictionary
         
