@@ -15,7 +15,9 @@ class Tweet: NSObject {
     var createdAt: NSDate?
     
     // (#5R) here for the favCount and retweetCount
-    
+    var id: String
+    var retweedCount: Int?
+    var favCount: Int?
     
     
     
@@ -30,7 +32,10 @@ class Tweet: NSObject {
         createdAt = formatter.dateFromString(createdAtString!)
         
         //  (#5R)  here for the favCount and retweetCount
-       
+       id = String(dictionary["id"]!)   //<-not sure about this string
+        
+        retweedCount = dictionary["retweet_count"] as? Int
+        favCount = dictionary["favorite_count"] as? Int
         
         
         

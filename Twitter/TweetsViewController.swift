@@ -18,7 +18,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-  
     
     
     
@@ -94,20 +93,21 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-    
-    /*func testTweets() {
+   /*
+    func testTweets() {
         let tweet = tweets![0]
         print(tweet.user!.name)
         //print(tweet.retweetCount as! Int)
         //print(tweet.favCount as! Int)
     }
-    */
+   */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         
         
         
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetsCell", forIndexPath: indexPath) as! TweetsCell
+       
         
         cell.profileImage.setImageWithURL(NSURL(string: tweets![indexPath.row].user!.profileImageUrl!)!);
         cell.userName.text = tweets![indexPath.row].user!.name!
@@ -115,6 +115,15 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.tweetContentText.text = tweets![indexPath.row].text!
         cell.createdTime.text = tweets![indexPath.row].createdAtString!
         
+        // (#5R) attempt to pull the data to the cell
+        cell.tweetID = tweets![indexPath.row].id
+        cell.retweetCountLabel.text = tweets![indexPath.row].retweetCount!
+        cell.favCountLabel.text = tweets![indexPath.row].favCount!
+        
+        
+        
+        
+        // (#5R)
         
         return cell
 

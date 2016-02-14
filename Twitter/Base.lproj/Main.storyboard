@@ -104,6 +104,9 @@
                                                         <constraint firstAttribute="width" constant="20" id="LW2-3X-f9f"/>
                                                     </constraints>
                                                     <state key="normal" title="R" image="retweet-action-inactive"/>
+                                                    <connections>
+                                                        <action selector="onRetweet:" destination="M8a-iz-kJC" eventType="touchUpInside" id="HBx-1v-eeW"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AT-a3-pzn">
                                                     <rect key="frame" x="211" y="105" width="20" height="20"/>
@@ -112,6 +115,9 @@
                                                         <constraint firstAttribute="height" constant="20" id="z27-b5-2LM"/>
                                                     </constraints>
                                                     <state key="normal" title="F" image="like-action-off"/>
+                                                    <connections>
+                                                        <action selector="onFav:" destination="M8a-iz-kJC" eventType="touchUpInside" id="HpS-qj-J3j"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs2-tW-IuJ">
                                                     <rect key="frame" x="174" y="105" width="20" height="20"/>
