@@ -84,7 +84,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="3/16/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-9h-MyP">
-                                                    <rect key="frame" x="272.5" y="10" width="39.5" height="13.5"/>
+                                                    <rect key="frame" x="272" y="10" width="39.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.51272087696335078" green="0.51272087696335078" blue="0.51272087696335078" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AT-a3-pzn">
-                                                    <rect key="frame" x="211" y="105" width="20" height="20"/>
+                                                    <rect key="frame" x="236" y="105" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="n5h-RC-2ms"/>
                                                         <constraint firstAttribute="height" constant="20" id="z27-b5-2LM"/>
@@ -119,23 +119,23 @@
                                                         <action selector="onFav:" destination="M8a-iz-kJC" eventType="touchUpInside" id="HpS-qj-J3j"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs2-tW-IuJ">
-                                                    <rect key="frame" x="174" y="105" width="20" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHL-Nd-BXf">
+                                                    <rect key="frame" x="264" y="109" width="33" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Lhk-G8-8Tt"/>
-                                                        <constraint firstAttribute="width" constant="20" id="yAo-YD-eCb"/>
+                                                        <constraint firstAttribute="width" constant="33" id="Kh8-d7-zld"/>
+                                                        <constraint firstAttribute="height" constant="12" id="WqI-hT-EGc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHL-Nd-BXf">
-                                                    <rect key="frame" x="239" y="105" width="20" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs2-tW-IuJ">
+                                                    <rect key="frame" x="174" y="109" width="33" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="Kh8-d7-zld"/>
-                                                        <constraint firstAttribute="height" constant="20" id="WqI-hT-EGc"/>
+                                                        <constraint firstAttribute="height" constant="12" id="Lhk-G8-8Tt"/>
+                                                        <constraint firstAttribute="width" constant="33" id="yAo-YD-eCb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -156,7 +156,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="g1K-9h-MyP" secondAttribute="trailing" constant="8" id="QFs-YU-hhX"/>
                                                 <constraint firstItem="DHL-Nd-BXf" firstAttribute="centerY" secondItem="3AT-a3-pzn" secondAttribute="centerY" id="Uil-6Z-JnL"/>
                                                 <constraint firstItem="Gc6-hY-44s" firstAttribute="leading" secondItem="Zsj-Cf-cKb" secondAttribute="trailing" constant="8" id="Wua-hb-0xs"/>
-                                                <constraint firstItem="3AT-a3-pzn" firstAttribute="leading" secondItem="Gs2-tW-IuJ" secondAttribute="trailing" constant="17" id="a1p-Id-vtd"/>
+                                                <constraint firstItem="3AT-a3-pzn" firstAttribute="leading" secondItem="Gs2-tW-IuJ" secondAttribute="trailing" constant="29" id="a1p-Id-vtd"/>
                                                 <constraint firstItem="Mi5-y7-aHe" firstAttribute="top" secondItem="aWU-ZS-0HC" secondAttribute="bottom" constant="3.5" id="anv-Cp-2J5"/>
                                                 <constraint firstItem="Gs2-tW-IuJ" firstAttribute="centerY" secondItem="Mi5-y7-aHe" secondAttribute="centerY" id="fLa-te-Jxt"/>
                                                 <constraint firstItem="Zsj-Cf-cKb" firstAttribute="top" secondItem="sxu-wf-rHh" secondAttribute="top" constant="7" id="fLr-Be-Kic"/>
