@@ -108,22 +108,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetsCell", forIndexPath: indexPath) as! TweetsCell
        
+        cell.tweet = tweets![indexPath.row]
         
-        cell.profileImage.setImageWithURL(NSURL(string: tweets![indexPath.row].user!.profileImageUrl!)!);
-        cell.userName.text = tweets![indexPath.row].user!.name!
-        cell.userHandle.text = "@" + (tweets![indexPath.row].user!.screenname!)
-        cell.tweetContentText.text = tweets![indexPath.row].text!
-        cell.createdTime.text = tweets![indexPath.row].createdAtString!
-        
-        // (#5R) attempt to pull the data to the cell
-        cell.tweetID = tweets![indexPath.row].id
-        cell.retweetCountLabel.text = tweets![indexPath.row].retweetCount!
-        cell.favCountLabel.text = tweets![indexPath.row].favCount!
-        
-        
-        
-        
-        // (#5R)
         
         return cell
 

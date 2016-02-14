@@ -16,7 +16,7 @@ class Tweet: NSObject {
     
     // (#5R) here for the favCount and retweetCount
     var id: String
-    var retweedCount: Int?
+    var retweetCount: Int?
     var favCount: Int?
     
     
@@ -34,7 +34,7 @@ class Tweet: NSObject {
         //  (#5R)  here for the favCount and retweetCount
        id = String(dictionary["id"]!)   //<-not sure about this string
         
-        retweedCount = dictionary["retweet_count"] as? Int
+        retweetCount = dictionary["retweet_count"] as? Int
         favCount = dictionary["favorite_count"] as? Int
         
         

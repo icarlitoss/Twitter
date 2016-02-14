@@ -35,10 +35,35 @@ class TweetsCell: UITableViewCell {
     @IBOutlet weak var favCountLabel: UILabel!
 
     var tweetID: String = ""
+     // (#5R) Done adding the retweet & favorite outlets + TweetID
     
     
-    // (#5R) Done adding the retweet & favorite outlets + TweetID
-
+    var tweet: Tweet! {
+        didSet {
+            tweetContentText.text = tweet.text
+            userName.text = tweet.user!.name
+            userHandle.text = "@\(tweet.user!.screenname!)"
+            let imageURL = tweet.user?.name
+            profileImage.setImageWithURL(NSURL(string: imageURL!)!)
+            
+            createdTime.text = calculateTimeStamp(tweet.createdAt!.timeIntervalSinceNow) //<-This is for the time to look nice
+            
+            
+         // (#5R) Starting adding the retweet & favorite outlets + TweetID
+            
+            tweetID = tweet.id
+            retweetCountLabel.text = String(tweet.retweetCount!)
+            favCountLabel.text = String(tweet.favCount!)
+            
+            retweetCountLabel.text! == "0" ? (retweetCountLabel.hidden = true) : (retweetCountLabel.hidden = false)
+            favCountLabel.text! == "0" ? (favCountLabel.hidden = true) : (favCountLabel.hidden = false)
+            // (#5R) Done adding the retweet & favorite outlets + TweetID
+            
+             }
+        
+        
+    }
+    
     
     
     
@@ -127,15 +152,14 @@ class TweetsCell: UITableViewCell {
             self.favButton.setImage(UIImage(named: "like-action-on.png"), forState: UIControlState.Selected)
             
             if self.favCountLabel.text! > "0" {
-                self.favCountLabel.text = String(self.tweets!.favCount! + 1)
+                self.favCountLabel.text = String(self.tweet.favCount! + 1)
             } else {
                 self.favCountLabel.hidden = false
-                self.favCountLabel.text = String(self.tweets!.favCount! + 1)
+                self.favCountLabel.text = String(self.tweet.favCount! + 1)
             }
         })
-    }
 
-}
+    }
     
     
     // (#5R) finished Trying to action
