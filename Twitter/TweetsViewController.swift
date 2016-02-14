@@ -11,13 +11,15 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets: [Tweet]?
+   /*
+    
     //refresh
     var refreshControl: UIRefreshControl!
-
+*/
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+  /*
     //pulling to refresh
     
     func pullToRefreshControl() {
@@ -31,7 +33,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             self.refreshControl.endRefreshing()
         })
     }
-    
+*/    
+
     func delay(delay: Double, closure: () -> () ) {
         dispatch_after(
             dispatch_time(
@@ -54,6 +57,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         //adding the tableview
         tableView.delegate = self
         tableView.dataSource = self
+        //for the autolayout of the tableview row
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
+        
         
         
         tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
@@ -93,12 +100,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetsCell", forIndexPath: indexPath) as! TweetsCell
         
         cell.profileImage.setImageWithURL(NSURL(string: tweets![indexPath.row].user!.profileImageUrl!)!);
-        cell.userName.text = tweets![indexPath.row].user!.name!;
-        cell.userHandle.text = tweets![indexPath.row].user!.screenname!;
-        cell.tweetContentText.text = tweets![indexPath.row].text!;
-        cell.createdTime.text = tweets![indexPath.row].createdAtString!;
+        cell.userName.text = tweets![indexPath.row].user!.name!
+        cell.userHandle.text = "@" + (tweets![indexPath.row].user!.screenname!)
+        cell.tweetContentText.text = tweets![indexPath.row].text!
+        cell.createdTime.text = tweets![indexPath.row].createdAtString!
         
-        return cell;
+        return cell
+
     }
     
     //tvds ends here
