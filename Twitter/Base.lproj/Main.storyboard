@@ -164,12 +164,12 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="createdTime" destination="g1K-9h-MyP" id="23b-Dx-saT"/>
+                                            <outlet property="favButton" destination="3AT-a3-pzn" id="YKg-Jd-199"/>
                                             <outlet property="favCountLabel" destination="DHL-Nd-BXf" id="UTb-e7-LUL"/>
-                                            <outlet property="likeImageView" destination="3AT-a3-pzn" id="xj3-XK-NqD"/>
                                             <outlet property="profileImage" destination="Zsj-Cf-cKb" id="GRY-1I-ZX7"/>
                                             <outlet property="replyImageView" destination="6Ha-UF-yXh" id="5Wx-BY-7ai"/>
+                                            <outlet property="retweetButton" destination="Mi5-y7-aHe" id="Z11-kg-afU"/>
                                             <outlet property="retweetCountLabel" destination="Gs2-tW-IuJ" id="oPa-4h-6bT"/>
-                                            <outlet property="retweetImageView" destination="Mi5-y7-aHe" id="HhH-Ub-D14"/>
                                             <outlet property="tweetContentText" destination="aWU-ZS-0HC" id="thk-G9-suN"/>
                                             <outlet property="userHandle" destination="fyh-ts-1qI" id="mPN-N0-6bG"/>
                                             <outlet property="userName" destination="Gc6-hY-44s" id="S3Z-XF-QXX"/>

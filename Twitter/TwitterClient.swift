@@ -118,40 +118,9 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     // (#5R) adding favorite to the twitterClient to extract it from Dictionary
     
-    func retweetWithCompletition(params: NSDictionary?, completion: (tweets: Tweet?, error: NSError?) -> ()) {
-        print(params!["id"] as! Int)
-        POST("1.1/statuses/retweet/\(params!["id"] as! Int).json", parameters: params, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
-            
-            var tweets = Tweet.tweetAsDictionary(response as! NSDictionary)
-            
-            print(tweets.retweetCount)
-            
-            completion(tweets: tweets, error: nil)
-            
-            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
-                
-                print("ERROR: \(error)")
-                completion(tweets: nil, error: error)
-        
-    }
+   
     
     
-    }
     
-    
-    func favoriteWithCompletion(params: NSDictionary?, completion: (tweets: Tweet?, error: NSError?) -> ()) {
-        
-        POST("1.1/favorites/create.json", parameters: params, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
-            
-            var tweets = Tweet.tweetAsDictionary(response as! NSDictionary)
-            
-            completion(tweets: tweets, error: nil)
-            
-            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
-                
-                print("ERROR: \(error)")
-                completion(tweets: nil, error: error)
-        }
-    }
     // (#5R) added favorite to the twitterClient to extract it from Dictionary
 }
