@@ -43,8 +43,8 @@ class TweetsCell: UITableViewCell {
             tweetContentText.text = tweet.text
             userName.text = tweet.user!.name
             userHandle.text = "@\(tweet.user!.screenname!)"
-            let imageURL = tweet.user?.name
-            profileImage.setImageWithURL(NSURL(string: imageURL!)!)
+            
+            profileImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
             
             createdTime.text = calculateTimeStamp(tweet.createdAt!.timeIntervalSinceNow) //<-This is for the time to look nice
             
