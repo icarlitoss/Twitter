@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              // Got to the logged in screen
             print("Current user detected: \(User.currentUser?.name)")
             
-            var vc =
+            let vc =
             
             storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
             
@@ -43,11 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func userDidLogout(){
-        var vc =
+        let vc =
         
         storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
         
         window?.rootViewController = vc
+
         
     }
     

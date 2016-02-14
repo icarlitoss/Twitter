@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RDv-OA-duj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -22,7 +22,7 @@
                                 <state key="normal" title="Login with Twitter"/>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="03e-oP-65g"/>
-                                    <segue destination="jj0-2B-tiC" kind="modal" id="woO-oM-dAH"/>
+                                    <segue destination="jj0-2B-tiC" kind="modal" identifier="loginSegue" id="YuL-3A-kg7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="378"/>
+            <point key="canvasLocation" x="1712" y="420"/>
         </scene>
         <!--Home-->
         <scene sceneID="LcF-AY-62g">
@@ -46,15 +46,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cm8-so-JyO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="166" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cm8-so-JyO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetsCell" rowHeight="159" id="M8a-iz-kJC" customClass="TweetsCell" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="159"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetsCell" rowHeight="175" id="M8a-iz-kJC" customClass="TweetsCell" customModule="Twitter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8a-iz-kJC" id="sxu-wf-rHh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="174.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zsj-Cf-cKb">
@@ -185,18 +185,11 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Cm8-so-JyO" firstAttribute="top" secondItem="cIc-26-LEk" secondAttribute="top" id="Bwo-c2-Ozb"/>
-                            <constraint firstItem="o73-ur-1M4" firstAttribute="top" secondItem="Cm8-so-JyO" secondAttribute="bottom" id="YjM-mY-0Ot"/>
-                            <constraint firstItem="Cm8-so-JyO" firstAttribute="leading" secondItem="cIc-26-LEk" secondAttribute="leading" id="ZeC-pC-JX9"/>
-                            <constraint firstAttribute="trailing" secondItem="Cm8-so-JyO" secondAttribute="trailing" id="tp0-nq-Gu9"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="iTC-AI-mMO">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Coh-Fm-QVB">
                             <connections>
                                 <action selector="onLogout:" destination="jj0-2B-tiC" id="x1J-xL-Tag"/>
-                                <segue destination="BYZ-38-t0r" kind="modal" id="s2e-n4-nSo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -206,47 +199,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEh-h1-jHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797" y="378"/>
+            <point key="canvasLocation" x="2861" y="420"/>
         </scene>
         <!--Home Navigation Controller-->
-        <scene sceneID="EEv-2R-Ber">
+        <scene sceneID="uvJ-KE-rAd">
             <objects>
-                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="bcC-kJ-9Js" customClass="HomeNavigationController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="OSK-G5-ts2" customClass="HomeNavigationController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ElE-QP-5O1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sEv-ri-XqJ">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="jj0-2B-tiC" kind="relationship" relationship="rootViewController" id="3sK-bx-mWY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d5b-SH-Huf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1256" y="378"/>
-        </scene>
-        <!--Login Navigation Controller-->
-        <scene sceneID="3gm-7w-hjf">
-            <objects>
-                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="RDv-OA-duj" customClass="LoginNavigationController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6U9-ff-HC4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pUi-yO-bBR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IfF-HE-9xm"/>
+                        <segue destination="jj0-2B-tiC" kind="relationship" relationship="rootViewController" id="at2-cH-yWs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mOL-7r-PBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbM-TI-iiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="378"/>
+            <point key="canvasLocation" x="2329" y="420"/>
         </scene>
     </scenes>
     <resources>
@@ -255,7 +226,6 @@
         <image name="retweet-action-inactive" width="75" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="woO-oM-dAH"/>
-        <segue reference="s2e-n4-nSo"/>
+        <segue reference="at2-cH-yWs"/>
     </inferredMetricsTieBreakers>
 </document>
