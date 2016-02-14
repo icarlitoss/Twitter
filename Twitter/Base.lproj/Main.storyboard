@@ -84,37 +84,34 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="3/16/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-9h-MyP">
-                                                    <rect key="frame" x="272" y="10" width="40" height="13.5"/>
+                                                    <rect key="frame" x="272.5" y="10" width="39.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.51272087696335078" green="0.51272087696335078" blue="0.51272087696335078" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ha-UF-yXh">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ha-UF-yXh">
                                                     <rect key="frame" x="81" y="105" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Epi-B8-R0H"/>
                                                         <constraint firstAttribute="width" constant="20" id="pKR-FU-l5x"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="A"/>
+                                                    <state key="normal" title="A" image="reply-action-pressed_0"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi5-y7-aHe">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi5-y7-aHe">
                                                     <rect key="frame" x="146" y="105" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="5M1-51-Mh4"/>
                                                         <constraint firstAttribute="width" constant="20" id="LW2-3X-f9f"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="R"/>
+                                                    <state key="normal" title="R" image="retweet-action-inactive"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AT-a3-pzn">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AT-a3-pzn">
                                                     <rect key="frame" x="211" y="105" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="n5h-RC-2ms"/>
                                                         <constraint firstAttribute="height" constant="20" id="z27-b5-2LM"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="F"/>
+                                                    <state key="normal" title="F" image="like-action-off"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs2-tW-IuJ">
                                                     <rect key="frame" x="174" y="105" width="20" height="20"/>
@@ -147,7 +144,7 @@
                                                 <constraint firstItem="Mi5-y7-aHe" firstAttribute="leading" secondItem="6Ha-UF-yXh" secondAttribute="trailing" constant="45" id="IXK-Cb-AIU"/>
                                                 <constraint firstItem="Gc6-hY-44s" firstAttribute="top" secondItem="sxu-wf-rHh" secondAttribute="top" constant="8" id="Kdf-94-uvD"/>
                                                 <constraint firstItem="DHL-Nd-BXf" firstAttribute="leading" secondItem="3AT-a3-pzn" secondAttribute="trailing" constant="8" id="NkC-7G-vF6"/>
-                                                <constraint firstItem="g1K-9h-MyP" firstAttribute="leading" secondItem="Gc6-hY-44s" secondAttribute="trailing" constant="96.5" id="OOz-xy-4yk"/>
+                                                <constraint firstItem="g1K-9h-MyP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gc6-hY-44s" secondAttribute="trailing" constant="96.5" id="OOz-xy-4yk"/>
                                                 <constraint firstItem="Zsj-Cf-cKb" firstAttribute="leading" secondItem="sxu-wf-rHh" secondAttribute="leading" constant="8" id="P08-eF-3GG"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Zsj-Cf-cKb" secondAttribute="bottom" constant="12" id="PgV-fq-w5a"/>
                                                 <constraint firstAttribute="trailing" secondItem="g1K-9h-MyP" secondAttribute="trailing" constant="8" id="QFs-YU-hhX"/>
@@ -241,6 +238,11 @@
             <point key="canvasLocation" x="188" y="378"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="like-action-off" width="54" height="72"/>
+        <image name="reply-action-pressed_0" width="65" height="72"/>
+        <image name="retweet-action-inactive" width="75" height="72"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3sK-bx-mWY"/>
         <segue reference="s2e-n4-nSo"/>

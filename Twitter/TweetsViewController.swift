@@ -11,40 +11,14 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets: [Tweet]?
-   /*
     
-    //refresh
     var refreshControl: UIRefreshControl!
-*/
+    let delay = 3.0 * Double(NSEC_PER_SEC)
+
     
     @IBOutlet weak var tableView: UITableView!
     
-  /*
-    //pulling to refresh
-    
-    func pullToRefreshControl() {
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
-        tableView.insertSubview(refreshControl, atIndex: 0)
-    }
-    
-    func onRefresh() {
-        delay(2, closure: {
-            self.refreshControl.endRefreshing()
-        })
-    }
-*/    
-
-    func delay(delay: Double, closure: () -> () ) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure
-        )
-    }
-
+  
     
     
     
@@ -57,6 +31,15 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         //adding the tableview
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        //here code for pull to refresh
+        refreshControl = UIRefreshControl()
+        tableView.addSubview(refreshControl)
+        
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+//ended code for pull to refresh
+        
         //for the autolayout of the tableview row
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
@@ -65,14 +48,35 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         TwitterClient.sharedInstance.homeTimelineWithParams(nil) { (tweets, error) -> () in
-            self.tweets = tweets;
+            self.tweets = tweets
             
-            self.tableView.reloadData();
+            self.tableView.reloadData()
+            
+            self.refreshControl.endRefreshing()
             
         }
         
         
     }
+    
+    //finishing pull to refresh 
+    func delay(delay:Double, closure:() -> ()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
+    func onRefresh() {
+        delay(1, closure: {
+            self.refreshControl.endRefreshing()
+        })
+    }
+    
+    //finished pull to refresh
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

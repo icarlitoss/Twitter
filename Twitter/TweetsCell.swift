@@ -34,7 +34,7 @@ class TweetsCell: UITableViewCell {
         profileImage.layer.cornerRadius = 3
         profileImage.clipsToBounds = true
         
-        
+        //for the autoLayout
         userName.preferredMaxLayoutWidth = userName.frame.size.width
         
     }
