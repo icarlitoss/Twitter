@@ -22,7 +22,7 @@
                                 <state key="normal" title="Login with Twitter"/>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="03e-oP-65g"/>
-                                    <segue destination="jj0-2B-tiC" kind="modal" identifier="loginSegue" id="YuL-3A-kg7"/>
+                                    <segue destination="OSK-G5-ts2" kind="modal" identifier="loginSegue" id="GdY-MY-oGi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -161,7 +161,7 @@
                                                 <constraint firstItem="Mi5-y7-aHe" firstAttribute="leading" secondItem="6Ha-UF-yXh" secondAttribute="trailing" constant="45" id="IXK-Cb-AIU"/>
                                                 <constraint firstItem="Gc6-hY-44s" firstAttribute="top" secondItem="sxu-wf-rHh" secondAttribute="top" constant="8" id="Kdf-94-uvD"/>
                                                 <constraint firstItem="DHL-Nd-BXf" firstAttribute="leading" secondItem="3AT-a3-pzn" secondAttribute="trailing" constant="8" id="NkC-7G-vF6"/>
-                                                <constraint firstItem="g1K-9h-MyP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gc6-hY-44s" secondAttribute="trailing" constant="96.5" id="OOz-xy-4yk"/>
+                                                <constraint firstItem="g1K-9h-MyP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gc6-hY-44s" secondAttribute="trailing" constant="12" id="OOz-xy-4yk"/>
                                                 <constraint firstItem="Zsj-Cf-cKb" firstAttribute="leading" secondItem="sxu-wf-rHh" secondAttribute="leading" constant="8" id="P08-eF-3GG"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Zsj-Cf-cKb" secondAttribute="bottom" constant="12" id="PgV-fq-w5a"/>
                                                 <constraint firstAttribute="trailing" secondItem="g1K-9h-MyP" secondAttribute="trailing" constant="8" id="QFs-YU-hhX"/>
@@ -238,7 +238,4 @@
         <image name="reply-action-pressed_0" width="65" height="72"/>
         <image name="retweet-action-inactive" width="75" height="72"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="at2-cH-yWs"/>
-    </inferredMetricsTieBreakers>
 </document>
