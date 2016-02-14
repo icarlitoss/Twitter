@@ -17,6 +17,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     @IBOutlet weak var tableView: UITableView!
+    //Optional*Network Fail 1*
+    
+    @IBOutlet weak var networkErrorBackground: UIView!
+    @IBOutlet weak var networkErrorLabel: UILabel!
+    //Optiona*Network Fail1*
+
+    
     
     
     
@@ -35,6 +42,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         //here code for pull to refresh
         refreshControl = UIRefreshControl()
         tableView.addSubview(refreshControl)
+        
+        
         
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
 //ended code for pull to refresh
@@ -74,6 +83,28 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
+
+    
+    
+    /*******Optiona*Network Fail2*****/
+    
+
+    func checkNetwork(){
+        if Reachability.isConnectedToNetwork() == true {
+            networkErrorLabel.hidden = true
+            networkErrorBackground.hidden = true
+     self.view.bringSubviewToFront(self.networkErrorBackground)
+        }else {
+            networkErrorLabel.hidden = false
+            networkErrorBackground.hidden = false
+            
+        }
+    }
+    
+    
+    
+    /*****Optiona Network Fail 2***/
+    
     //finished pull to refresh
     
 
@@ -91,7 +122,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             return 0
         }
     }
-    
+ 
+
     
    /*
     func testTweets() {

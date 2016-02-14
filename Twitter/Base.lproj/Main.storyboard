@@ -46,12 +46,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😱 Network Error! 😢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8v-zX-GnR">
-                                <rect key="frame" x="47" y="268.5" width="226" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-XX-Tk4">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😱 Network Error! 😢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8v-zX-GnR">
+                                        <rect key="frame" x="7" y="48.5" width="226" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="166" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cm8-so-JyO">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -191,10 +196,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="z8v-zX-GnR" firstAttribute="centerX" secondItem="cIc-26-LEk" secondAttribute="centerX" id="6z9-iM-QgR"/>
-                            <constraint firstItem="z8v-zX-GnR" firstAttribute="centerY" secondItem="cIc-26-LEk" secondAttribute="centerY" id="QrY-yh-6Sm"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="iTC-AI-mMO">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Coh-Fm-QVB">
@@ -204,6 +205,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="networkErrorBackground" destination="HwI-XX-Tk4" id="ABj-dL-ur0"/>
+                        <outlet property="networkErrorLabel" destination="z8v-zX-GnR" id="pr5-TY-n7w"/>
                         <outlet property="tableView" destination="Cm8-so-JyO" id="bAv-bL-cfA"/>
                     </connections>
                 </viewController>

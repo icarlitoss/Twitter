@@ -10,6 +10,9 @@ import UIKit
 
 class TweetsCell: UITableViewCell {
     
+    
+    
+    
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var userName: UILabel!
