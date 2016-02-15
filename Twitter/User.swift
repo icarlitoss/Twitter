@@ -18,7 +18,7 @@ var storyboard = UIStoryboard(name: "Main", bundle: nil)
 var _currentUser: User?
 let currentUserKey = "kCurrentUserKey"
 let userDidLoginNotification = "userDidLoginNotification"
-let userDidLogoutNotification = "userDidLoginNotification"
+let userDidLogoutNotification = "userDidLogoutNotification"
 
 
 class User: NSObject {

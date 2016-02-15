@@ -11,7 +11,7 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets: [Tweet]?
-    
+    //var isMoreDataLoading = false
     var refreshControl: UIRefreshControl!
     let delay = 3.0 * Double(NSEC_PER_SEC)
 
@@ -42,7 +42,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         //here code for pull to refresh
         refreshControl = UIRefreshControl()
         tableView.addSubview(refreshControl)
-        
         
         
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
@@ -144,16 +143,31 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         return cell
+        
+        }
+        
 
-        
-        
-    }
     
     //tvds ends here
-    
-    
-    
-    
+   
+    /*************************
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+           if (!isMoreDataLoading) {
+               // Calculate the position of one screen length before the bottom of the results
+               let scrollViewContentHeight = tableView.contentSize.height
+               let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+               
+               // When the user has scrolled past the threshold, start requesting
+               if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+                   
+                   isMoreDataLoading = true
+               
+                   // Code to load more results
+                   loadMoreData()
+               }
+           }
+
+    ****************************/
     
     
     
