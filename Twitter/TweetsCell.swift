@@ -7,6 +7,10 @@
 //
 
 import UIKit
+protocol TweetCellDelegate {
+    func userReplyToTweet(reply_screenNameYOOO: String)
+    
+}
 
 class TweetsCell: UITableViewCell {
     
@@ -54,9 +58,9 @@ class TweetsCell: UITableViewCell {
             
          // (#5R) Starting adding the retweet & favorite outlets + TweetID
             
-            tweetID = tweet.id
-            retweetCountLabel.text = String(tweet.retweetCount!)
-            favCountLabel.text = String(tweet.favCount!)
+            //tweetID = tweet.id
+            retweetCountLabel.text = String(tweet.retweetCount)
+            favCountLabel.text = String(tweet.favCount)
             
             retweetCountLabel.text! == "0" ? (retweetCountLabel.hidden = true) : (retweetCountLabel.hidden = false)
             favCountLabel.text! == "0" ? (favCountLabel.hidden = true) : (favCountLabel.hidden = false)
@@ -132,7 +136,7 @@ class TweetsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
+   /*
     // (#5R) tryign to action
     @IBAction func onRetweet(sender: AnyObject) {
     
@@ -164,10 +168,17 @@ class TweetsCell: UITableViewCell {
 
     }
     
-    
+   */
     // (#5R) finished Trying to action
     
+    var delegate: TweetCellDelegate?
     
+    @IBAction func onReply(sender: AnyObject) {
+        //        let screenNameString = userHandle.text
+        //        print("\(screenNameString)")
+        //        delegate!.userReplyToTweet(screenNameString!)
+    }
+
     
     
     

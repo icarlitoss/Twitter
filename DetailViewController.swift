@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftMoment
 
 class DetailViewController: UIViewController {
 
@@ -80,9 +81,9 @@ class DetailViewController: UIViewController {
     
     func showProfile(){
         userName.text = tweetar!.user!.name!
-        detailUserHandle.text = ("@\(tweetar!.user!.handle!)")
+        detailUserHandle.text = ("@\(tweetar!.user!.screenname!)")
         detailTweetContentText.text = tweetar!.text!
-        detailImageView.setImageWithURL(NSURL(string: tweetar!.user!.profileViewUrl!)!)
+        detailImageView.setImageWithURL(NSURL(string: tweetar!.user!.profileImageUrl!)!)
         //timeLabel.text = timeSpanText  //displays timeSpan
         let tweetDate = parseTwitterDate("\(tweetar!.createdAt!)")
         createdTime.text = tweetDate
@@ -90,19 +91,37 @@ class DetailViewController: UIViewController {
         favCheck()
         retweetCheck()
         
-        replyID = tweetar!.id!
+        replyID = tweetar.id!
         //print("is issssss\(replyID)")
-        replyTo = detailHandleLabel.text
+        replyTo = detailUserHandle.text
         userDefaults.setValue(replyID, forKey: "detailReplyTo_ID")
         userDefaults.setValue(replyTo, forKey: "detailReplyTo_Handle")
     }
 
+    //for the time to look nice//
+    //Shows the date in proper formate
+    func parseTwitterDate(twitterDate:String)->String?{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+        
+        let indate = formatter.dateFromString(tweetar!.createdAtString!)
+        let outputFormatter = NSDateFormatter()
+        outputFormatter.dateFormat = "h:mm a · dd MMM yy"
+        var outputDate:String?
+        if let d = indate {
+            outputDate = outputFormatter.stringFromDate(d)
+        }
+        return outputDate;
+    }
+    //finished time to look nice
+    
+    
     
     //to add the animation. fav and retweet
     //Action to retweet/unretweet animation
     @IBAction func onRetweetClicked(sender: AnyObject) {
         if retweeted == false {
-            TwitterClient.sharedInstance.retweetWithCompletion(["id": tweetar!.id!]) { (tweet, error) -> () in
+            TwitterClient.sharedInstance.retweet(["id": tweetar!.id!]) { (tweet, error) -> () in
                 self.retweeted = true
                 print("You retweeted: \(self.tweetar!.user!.name!)'s post")
                 //self.tweetar.retweetCount += 1
@@ -126,7 +145,7 @@ class DetailViewController: UIViewController {
                 self.retweetCheck()
             }
         }else{
-            TwitterClient.sharedInstance.unRetweetWithCompletion(["id": tweetar!.id!]) { (tweet, error) -> () in
+            TwitterClient.sharedInstance.unRetweet(["id": tweetar!.id!]) { (tweet, error) -> () in
                 self.retweeted = false
                 print("You unretweeted: \(self.tweetar!.user!.name!)'s post")
                 self.tweetar!.retweetCount -= 1
@@ -142,7 +161,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func onFavClicked(sender: AnyObject) {
         if liked == false {
-            TwitterClient.sharedInstance.favoriteWithCompletion(["id": tweetar!.id!]) { (tweet, error) -> () in
+            TwitterClient.sharedInstance.favTweet(["id": tweetar!.id!]) { (tweet, error) -> () in
                 self.liked = true
                 print("You liked: \(self.tweetar!.user!.name!)'s post")
                 self.tweetar.favCount += 1
@@ -153,17 +172,17 @@ class DetailViewController: UIViewController {
                 }
                 
                 self.favCountLabel.text = "\(likeCountNum)"
-                self.likeImageView.image = UIImage(named: "like-clicked")
+                self.favImageView.image = UIImage(named: "like-clicked")
                 
                 self.favCheck()
             }
         }else{
-            TwitterClient.sharedInstance.unfavoriteWithCompletion(["id": tweetar!.id!]) { (tweet, error) -> () in
+            TwitterClient.sharedInstance.unFavTweet(["id": tweetar!.id!]) { (tweet, error) -> () in
                 self.liked = false
                 print("You unliked: \(self.tweetar!.user!.name!)'s post")
                 self.tweetar!.favCount -= 1
                 self.favCountLabel.text = "\(self.tweetar!.favCount)"
-                self.likeImageView.image = UIImage(named: "like")
+                self.favImageView.image = UIImage(named: "like")
                 
                 self.favCheck()
             }
@@ -186,12 +205,12 @@ class DetailViewController: UIViewController {
     
     func retweetCheck(){
         //display text only when likes, else hides
-        let retweetCounts = tweetar!.retweetCount as Int
+        let retweetCounts = tweetar!.retweetCount as! Int
         if retweetCounts == 0 {
             //retweetText.text = ""
             retweetCountLabel.text = ""
         } else {
-            retweetCountLabel.text = "\(tweetar!.retweetCount as Int)"
+            retweetCountLabel.text = "\(tweetar!.retweetCount as! Int)"
             //retweetText.text = "RETWEETS"
         }
     }

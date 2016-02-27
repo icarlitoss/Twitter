@@ -11,6 +11,9 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets: [Tweet]?
+    //wekk 5 v
+    var tweetsBackup: Tweet?
+//week 5 ^
     //var isMoreDataLoading = false
     var refreshControl: UIRefreshControl!
     let delay = 3.0 * Double(NSEC_PER_SEC)
@@ -171,7 +174,28 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     
+    /***********************/
     
+//********* Segue *******
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//pass data to "DetailsViewController"
+if (segue.identifier == "cellToDetails") {
+cellData(sender)
+    
+let detailViewController = segue.destinationViewController as! DetailViewController
+detailViewController.tweetar = tweetsBackup
+}
+}
+    func cellData(sender: AnyObject?) {
+        let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+        let tweetss = tweets![indexPath!.row]
+        tweetsBackup = tweetss
+    }
+
+
+
+/********************/
+
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
         

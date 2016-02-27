@@ -192,7 +192,7 @@
                                             <outlet property="tweetContentText" destination="aWU-ZS-0HC" id="thk-G9-suN"/>
                                             <outlet property="userHandle" destination="fyh-ts-1qI" id="mPN-N0-6bG"/>
                                             <outlet property="userName" destination="Gc6-hY-44s" id="S3Z-XF-QXX"/>
-                                            <segue destination="uji-MC-Goi" kind="push" id="bau-XS-oUL"/>
+                                            <segue destination="uji-MC-Goi" kind="push" identifier="cellToDetails" id="bau-XS-oUL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -314,6 +314,7 @@
                                 <state key="normal" title="R" image="retweet-action-inactive"/>
                                 <connections>
                                     <action selector="onRetweet:" destination="M8a-iz-kJC" eventType="touchUpInside" id="GNy-o7-9dp"/>
+                                    <action selector="onRetweetClicked:" destination="uji-MC-Goi" eventType="touchUpInside" id="A2h-Qr-5Yg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL4-lB-3MN">
@@ -325,6 +326,7 @@
                                 <state key="normal" title="F" image="like-action-off"/>
                                 <connections>
                                     <action selector="onFav:" destination="M8a-iz-kJC" eventType="touchUpInside" id="EYU-Ii-QgO"/>
+                                    <action selector="onFavClicked:" destination="uji-MC-Goi" eventType="touchUpInside" id="qzv-fg-iVr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="99999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHs-Kq-e3S">
