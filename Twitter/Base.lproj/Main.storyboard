@@ -102,13 +102,33 @@
                                                     <color key="textColor" red="0.51272087696335078" green="0.51272087696335078" blue="0.51272087696335078" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="reply-action-pressed_0" translatesAutoresizingMaskIntoConstraints="NO" id="CZz-EG-Pyu">
+                                                    <rect key="frame" x="81" y="105" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="EUd-tu-l3q"/>
+                                                        <constraint firstAttribute="width" constant="20" id="bEy-CS-QHZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="retweet-action-inactive" translatesAutoresizingMaskIntoConstraints="NO" id="Ad7-dF-If6">
+                                                    <rect key="frame" x="146" y="105" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="etD-E3-Zs6"/>
+                                                        <constraint firstAttribute="height" constant="20" id="qQE-fD-b54"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="like-action-off" translatesAutoresizingMaskIntoConstraints="NO" id="GA0-DG-iHj">
+                                                    <rect key="frame" x="236" y="105" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="K0f-uY-4bR"/>
+                                                        <constraint firstAttribute="width" constant="20" id="aLq-nS-lwJ"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ha-UF-yXh">
                                                     <rect key="frame" x="81" y="105" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Epi-B8-R0H"/>
                                                         <constraint firstAttribute="width" constant="20" id="pKR-FU-l5x"/>
                                                     </constraints>
-                                                    <state key="normal" title="A" image="reply-action-pressed_0"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi5-y7-aHe">
                                                     <rect key="frame" x="146" y="105" width="20" height="20"/>
@@ -116,9 +136,8 @@
                                                         <constraint firstAttribute="height" constant="20" id="5M1-51-Mh4"/>
                                                         <constraint firstAttribute="width" constant="20" id="LW2-3X-f9f"/>
                                                     </constraints>
-                                                    <state key="normal" title="R" image="retweet-action-inactive"/>
+                                                    <state key="normal" image="retweet-action-inactive"/>
                                                     <connections>
-                                                        <action selector="onRetweet:" destination="M8a-iz-kJC" eventType="touchUpInside" id="HBx-1v-eeW"/>
                                                         <action selector="onRetweetButtonClicked:" destination="jj0-2B-tiC" eventType="touchUpInside" id="OHm-Yu-0Cu"/>
                                                     </connections>
                                                 </button>
@@ -128,9 +147,8 @@
                                                         <constraint firstAttribute="width" constant="20" id="n5h-RC-2ms"/>
                                                         <constraint firstAttribute="height" constant="20" id="z27-b5-2LM"/>
                                                     </constraints>
-                                                    <state key="normal" title="F" image="like-action-off"/>
+                                                    <state key="normal" image="like-action-off"/>
                                                     <connections>
-                                                        <action selector="onFav:" destination="M8a-iz-kJC" eventType="touchUpInside" id="HpS-qj-J3j"/>
                                                         <action selector="onFavButtonClicked:" destination="jj0-2B-tiC" eventType="touchUpInside" id="Idq-KB-y88"/>
                                                     </connections>
                                                 </button>
@@ -187,12 +205,12 @@
                                             <outlet property="createdTime" destination="g1K-9h-MyP" id="23b-Dx-saT"/>
                                             <outlet property="favButton" destination="3AT-a3-pzn" id="YKg-Jd-199"/>
                                             <outlet property="favCountLabel" destination="DHL-Nd-BXf" id="UTb-e7-LUL"/>
-                                            <outlet property="ffavImageView" destination="3AT-a3-pzn" id="AWe-ix-TuX"/>
+                                            <outlet property="ffavImageView" destination="GA0-DG-iHj" id="UHL-8U-K9k"/>
                                             <outlet property="profileImage" destination="Zsj-Cf-cKb" id="GRY-1I-ZX7"/>
                                             <outlet property="replyImageView" destination="6Ha-UF-yXh" id="5Wx-BY-7ai"/>
                                             <outlet property="retweetButton" destination="Mi5-y7-aHe" id="Z11-kg-afU"/>
                                             <outlet property="retweetCountLabel" destination="Gs2-tW-IuJ" id="oPa-4h-6bT"/>
-                                            <outlet property="retwetImageView" destination="Mi5-y7-aHe" id="Z9v-HV-Vl3"/>
+                                            <outlet property="retwetImageView" destination="Ad7-dF-If6" id="eb5-Wh-rFQ"/>
                                             <outlet property="tweetContentText" destination="aWU-ZS-0HC" id="thk-G9-suN"/>
                                             <outlet property="userHandle" destination="fyh-ts-1qI" id="mPN-N0-6bG"/>
                                             <outlet property="userName" destination="Gc6-hY-44s" id="S3Z-XF-QXX"/>
@@ -288,6 +306,27 @@
                                 <color key="textColor" red="0.51272087700000002" green="0.51272087700000002" blue="0.51272087700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="reply-action-pressed_0" translatesAutoresizingMaskIntoConstraints="NO" id="Czg-Wc-FzQ">
+                                <rect key="frame" x="81" y="170" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="U7i-2X-wqr"/>
+                                    <constraint firstAttribute="height" constant="20" id="jXT-Kp-fAv"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="retweet-action-inactive" translatesAutoresizingMaskIntoConstraints="NO" id="Edn-JU-mIs">
+                                <rect key="frame" x="146" y="170" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="6o3-S9-kIM"/>
+                                    <constraint firstAttribute="height" constant="20" id="xri-jj-fQY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="like-action-off" translatesAutoresizingMaskIntoConstraints="NO" id="hpU-Ab-kKu">
+                                <rect key="frame" x="236" y="170" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="LRR-RE-MQg"/>
+                                    <constraint firstAttribute="width" constant="20" id="jWu-8f-56s"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hW3-KF-4hs">
                                 <rect key="frame" x="81" y="104.5" width="231" height="62.5"/>
                                 <string key="text">Some text, or tweet should go here! Some text, or tweet should go here! Some text, or tweet should go here! Some text, or tweet should go here!</string>
@@ -307,7 +346,6 @@
                                     <constraint firstAttribute="height" constant="20" id="gQG-nE-buV"/>
                                     <constraint firstAttribute="width" constant="20" id="l7v-ae-9u5"/>
                                 </constraints>
-                                <state key="normal" title="A" image="reply-action-pressed_0"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yas-U6-6IF">
                                 <rect key="frame" x="146" y="170" width="20" height="20"/>
@@ -315,7 +353,6 @@
                                     <constraint firstAttribute="width" constant="20" id="9lC-2i-oDK"/>
                                     <constraint firstAttribute="height" constant="20" id="oCW-Ey-ky6"/>
                                 </constraints>
-                                <state key="normal" title="R" image="retweet-action-inactive"/>
                                 <connections>
                                     <action selector="onRetweetClicked:" destination="uji-MC-Goi" eventType="touchUpInside" id="A2h-Qr-5Yg"/>
                                 </connections>
@@ -326,7 +363,6 @@
                                     <constraint firstAttribute="width" constant="20" id="nSQ-2W-99k"/>
                                     <constraint firstAttribute="height" constant="20" id="oow-1F-kpP"/>
                                 </constraints>
-                                <state key="normal" title="F" image="like-action-off"/>
                                 <connections>
                                     <action selector="onFavClicked:" destination="uji-MC-Goi" eventType="touchUpInside" id="qzv-fg-iVr"/>
                                 </connections>
@@ -382,12 +418,12 @@
                         <outlet property="detailUserHandle" destination="dR6-ea-hMX" id="xAU-2A-UXn"/>
                         <outlet property="favButton" destination="EL4-lB-3MN" id="of4-Cb-sWU"/>
                         <outlet property="favCountLabel" destination="fHs-Kq-e3S" id="UuG-Pc-OfT"/>
-                        <outlet property="favImageView" destination="EL4-lB-3MN" id="PQE-il-Cf3"/>
+                        <outlet property="ffavImageView" destination="hpU-Ab-kKu" id="OTK-go-APO"/>
                         <outlet property="replyButton" destination="4hq-Nr-SPp" id="VlT-8H-z92"/>
                         <outlet property="replyImageView" destination="4hq-Nr-SPp" id="Cop-no-AW8"/>
                         <outlet property="retweetButton" destination="yas-U6-6IF" id="2h8-yQ-tUu"/>
                         <outlet property="retweetCountLabel" destination="Xbx-Ql-vy2" id="ozY-o2-6v9"/>
-                        <outlet property="retweetImageView" destination="yas-U6-6IF" id="Qwz-zc-wLC"/>
+                        <outlet property="retwetImageView" destination="Edn-JU-mIs" id="sPV-0W-i3G"/>
                         <outlet property="userName" destination="hig-Ou-QzD" id="Kx1-ao-OG5"/>
                     </connections>
                 </viewController>

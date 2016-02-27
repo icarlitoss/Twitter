@@ -46,9 +46,9 @@ class DetailViewController: UIViewController {
     //now adding the image for the buttons
     
     
-    @IBOutlet weak var retweetImageView: UIImageView!
+    @IBOutlet weak var retwetImageView: UIImageView!
     
-    @IBOutlet weak var favImageView: UIImageView!
+    @IBOutlet weak var ffavImageView: UIImageView!
     
     
     //...
@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
     
     var tweetar: Tweet!
     var timeSpanText: String?
-    var liked: Bool = false
+    var faved: Bool = false
     var retweeted: Bool = false
     private var detailTweets =  [Tweet]()
 
@@ -141,7 +141,7 @@ class DetailViewController: UIViewController {
                 else {
                     // self.retweetLabel.text = "\(tweetCountNum)"
                 }
-                self.retweetImageView.image = UIImage(named: "retweet-clicked")
+                self.retwetImageView.image = UIImage(named: "retweet-action-on-green")
                 self.retweetCheck()
             }
         }else{
@@ -150,7 +150,7 @@ class DetailViewController: UIViewController {
                 print("You unretweeted: \(self.tweetar!.user!.name!)'s post")
                 self.tweetar!.retweetCount -= 1
                 self.retweetCountLabel.text = "\(self.tweetar!.retweetCount)"
-                self.retweetImageView.image = UIImage(named: "retweet")
+                self.retwetImageView.image = UIImage(named: "retweet-action-inactive")
                 self.retweetCheck()
             }
         }
@@ -160,9 +160,9 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func onFavClicked(sender: AnyObject) {
-        if liked == false {
+        if faved == false {
             TwitterClient.sharedInstance.favTweet(["id": tweetar!.id!]) { (tweet, error) -> () in
-                self.liked = true
+                self.faved = true
                 print("You liked: \(self.tweetar!.user!.name!)'s post")
                 self.tweetar.favCount += 1
                 
@@ -172,17 +172,17 @@ class DetailViewController: UIViewController {
                 }
                 
                 self.favCountLabel.text = "\(likeCountNum)"
-                self.favImageView.image = UIImage(named: "like-clicked")
+                self.ffavImageView.image = UIImage(named: "like-action-on-red")
                 
                 self.favCheck()
             }
         }else{
             TwitterClient.sharedInstance.unFavTweet(["id": tweetar!.id!]) { (tweet, error) -> () in
-                self.liked = false
+                self.faved = false
                 print("You unliked: \(self.tweetar!.user!.name!)'s post")
                 self.tweetar!.favCount -= 1
                 self.favCountLabel.text = "\(self.tweetar!.favCount)"
-                self.favImageView.image = UIImage(named: "like")
+                self.ffavImageView.image = UIImage(named: "like-action-off")
                 
                 self.favCheck()
             }

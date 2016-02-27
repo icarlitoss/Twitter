@@ -216,7 +216,7 @@ detailViewController.tweetar = tweetsBackup
         
         if retweeted == false {
             TwitterClient.sharedInstance.retweet(["id": tweets![indexPath.row].id!]) { (tweet, error) -> () in
-                cell.retwetImageView.image = UIImage(named: "retweet-clicked")
+                cell.retwetImageView.image = UIImage(named: "retweet-action-on-green")
                 self.retweeted = true
                 print("You retweeted \(self.tweets![indexPath.row].user!.name!)'s post")
                 self.tweets![indexPath.row].retweetCount += 1
@@ -227,7 +227,7 @@ detailViewController.tweetar = tweetsBackup
         }else{
             TwitterClient.sharedInstance.unFavTweet(["id": tweets![indexPath.row].id!]) { (tweet, error) -> () in
                 
-                cell.retwetImageView.image = UIImage(named: "retweet")
+                cell.retwetImageView.image = UIImage(named: "retweet-action-inactive")
                 self.retweeted = false
                 print("You retweeted \(self.tweets![indexPath.row].user!.name!)'s post")
                 self.tweets![indexPath.row].retweetCount -= 1
@@ -258,7 +258,7 @@ detailViewController.tweetar = tweetsBackup
                 
                 cell.ffavImageView.animationDuration = 1
                 cell.ffavImageView.animationRepeatCount = 1
-                cell.ffavImageView.image = UIImage(named: "like-clicked")
+                cell.ffavImageView.image = UIImage(named: "like-action-on-red")
                 cell.ffavImageView.startAnimating()
                 
                 self.faved = true
