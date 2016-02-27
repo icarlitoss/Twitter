@@ -269,7 +269,7 @@ detailViewController.tweetar = tweetsBackup
         }else{
             
             TwitterClient.sharedInstance.unFavTweet(["id": tweets![indexPath.row].id!]) { (tweet, error) -> () in
-                cell.ffavImageView.image = UIImage(named: "like")
+                cell.ffavImageView.image = UIImage(named: "like-action-off")
                 self.faved = false
                 
                 print("You unliked \(self.tweets![indexPath.row].user!.name!)'s post")
