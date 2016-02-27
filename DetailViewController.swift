@@ -156,7 +156,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-    //Action to fav/ and not fav 
+    //Action to fav/unfav 
     
     
     @IBAction func onFavClicked(sender: AnyObject) {
@@ -205,12 +205,12 @@ class DetailViewController: UIViewController {
     
     func retweetCheck(){
         //display text only when likes, else hides
-        let retweetCounts = tweetar!.retweetCount as! Int
+        let retweetCounts = tweetar!.retweetCount as Int
         if retweetCounts == 0 {
             //retweetText.text = ""
             retweetCountLabel.text = ""
         } else {
-            retweetCountLabel.text = "\(tweetar!.retweetCount as! Int)"
+            retweetCountLabel.text = "\(tweetar!.retweetCount as Int)"
             //retweetText.text = "RETWEETS"
         }
     }

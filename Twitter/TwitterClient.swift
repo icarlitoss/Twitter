@@ -26,7 +26,18 @@ class TwitterClient: BDBOAuth1SessionManager {
         return Static.instance
     }
 
-    
+    func homeTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()) {
+        GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+            
+            completion(tweets: tweets, error: nil)
+            
+            }, failure: { (operation:NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("error getting home timeline")
+                completion(tweets: nil, error: error)
+        })
+    }
+    /*
     func homeTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()){
         
         TwitterClient.sharedInstance.GET("1.1/statuses/home_timeline.json", parameters: params, success: {(operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
@@ -46,7 +57,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
         
     }
-    
+
     
     
     func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()){
@@ -70,7 +81,27 @@ class TwitterClient: BDBOAuth1SessionManager {
         
     
     }
+    */
     
+    func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()) {
+        
+        loginCompletion = completion
+        requestSerializer.removeAccessToken()
+        fetchRequestTokenWithPath("oauth/request_token",
+            method: "GET",
+            callbackURL: NSURL(string: "ctptwitterCarlos://oauth"),
+            scope: nil,
+            success: { (requestToken: BDBOAuth1Credential!) -> Void in
+                print("Got the request token")
+                let authURL = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")
+                UIApplication.sharedApplication().openURL(authURL!)
+                
+            }) { (error: NSError!) -> Void in
+                print("Failed to get request token")
+                self.loginCompletion?(user: nil, error: error)
+        }
+    }
+
     
     
     func openURL(url: NSURL){

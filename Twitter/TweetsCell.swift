@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftMoment
+
 protocol TweetCellDelegate {
     func userReplyToTweet(reply_screenNameYOOO: String)
     
@@ -37,10 +39,12 @@ class TweetsCell: UITableViewCell {
     @IBOutlet weak var favButton: UIButton!
     
     
+    @IBOutlet weak var ffavImageView: UIImageView!
     @IBOutlet weak var retweetCountLabel: UILabel!
     
     @IBOutlet weak var favCountLabel: UILabel!
 
+    @IBOutlet weak var retwetImageView: UIImageView!
     var tweetID: String = ""
      // (#5R) Done adding the retweet & favorite outlets + TweetID
     

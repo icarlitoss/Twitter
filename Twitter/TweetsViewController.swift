@@ -18,6 +18,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     var refreshControl: UIRefreshControl!
     let delay = 3.0 * Double(NSEC_PER_SEC)
 
+    var faved: Bool = false
+    var retweeted: Bool = false
     
     @IBOutlet weak var tableView: UITableView!
     //Optional*Network Fail 1*
@@ -204,6 +206,82 @@ detailViewController.tweetar = tweetsBackup
         
     }
     
+    
+    
+    //Action to retweet/unretweet animation
+    @IBAction func onRetweetButtonClicked(sender: UIButton) {
+        let subviewPostion: CGPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let indexPath: NSIndexPath = self.tableView.indexPathForRowAtPoint(subviewPostion)!
+        let cell =  self.tableView.cellForRowAtIndexPath(indexPath)! as! TweetsCell
+        
+        if retweeted == false {
+            TwitterClient.sharedInstance.retweet(["id": tweets![indexPath.row].id!]) { (tweet, error) -> () in
+                cell.retwetImageView.image = UIImage(named: "retweet-clicked")
+                self.retweeted = true
+                print("You retweeted \(self.tweets![indexPath.row].user!.name!)'s post")
+                self.tweets![indexPath.row].retweetCount += 1
+                cell.retweetCountLabel.text = "\(self.tweets![indexPath.row].retweetCount)"
+                //                    let indexPath = NSIndexPath(forRow: indexPath.row, inSection: 0)
+                //                    self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            }
+        }else{
+            TwitterClient.sharedInstance.unFavTweet(["id": tweets![indexPath.row].id!]) { (tweet, error) -> () in
+                
+                cell.retwetImageView.image = UIImage(named: "retweet")
+                self.retweeted = false
+                print("You retweeted \(self.tweets![indexPath.row].user!.name!)'s post")
+                self.tweets![indexPath.row].retweetCount -= 1
+                cell.retweetCountLabel.text = "\(self.tweets![indexPath.row].retweetCount)"
+            }
+        }
+    }
+    
+    //Action to fave/unfav animation
+    @IBAction func onFavButtonClicked(sender: UIButton) {
+        let subviewPostion: CGPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let indexPath: NSIndexPath = self.tableView.indexPathForRowAtPoint(subviewPostion)!
+        let cell =  self.tableView.cellForRowAtIndexPath(indexPath)! as! TweetsCell
+        
+        if faved == false {
+            TwitterClient.sharedInstance.favTweet(["id": tweets![indexPath.row].id!]) { (tweet, error) -> () in
+                
+                
+                //heart animation when fav clicked
+                let ImageName = "heart-"
+                var imagesNames = [ "\(ImageName)1","\(ImageName)2","\(ImageName)3","\(ImageName)4","\(ImageName)5","\(ImageName)6","\(ImageName)7","\(ImageName)8","\(ImageName)9","\(ImageName)10"]
+                var images = [UIImage]()
+                
+                for i in 0..<imagesNames.count{
+                    images.append(UIImage(named: imagesNames[i])!)
+                    cell.ffavImageView.animationImages = images
+                }
+                
+                cell.ffavImageView.animationDuration = 1
+                cell.ffavImageView.animationRepeatCount = 1
+                cell.ffavImageView.image = UIImage(named: "like-clicked")
+                cell.ffavImageView.startAnimating()
+                
+                self.faved = true
+                print("You liked \(self.tweets![indexPath.row].user!.name!)'s post")
+                self.tweets![indexPath.row].favCount += 1
+                cell.favCountLabel.text = "\(self.tweets![indexPath.row].favCount)"
+            }
+        }else{
+            
+            TwitterClient.sharedInstance.unFavTweet(["id": tweets![indexPath.row].id!]) { (tweet, error) -> () in
+                cell.ffavImageView.image = UIImage(named: "like")
+                self.faved = false
+                
+                print("You unliked \(self.tweets![indexPath.row].user!.name!)'s post")
+                self.tweets![indexPath.row].favCount -= 1
+                cell.favCountLabel.text = "\(self.tweets![indexPath.row].favCount)"
+            }
+        }
+    }
+    
+
+    
+
     
 
     /*
