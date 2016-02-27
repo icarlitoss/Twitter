@@ -28,12 +28,17 @@ class User: NSObject {
     var profileImageUrl: String?
     var tagline: String?
     var dictionary: NSDictionary
+    var follower: Int?
+    var following: Int?
     
     
 
     
     init(dictionary: NSDictionary){
         self.dictionary = dictionary
+        
+        follower = dictionary["followers_count"] as? Int
+        following = dictionary["friends_count"] as? Int
         
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
