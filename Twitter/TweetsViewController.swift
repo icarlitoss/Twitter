@@ -184,10 +184,35 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 if (segue.identifier == "cellToDetails") {
 cellData(sender)
     
+    
+    
+    
 let detailViewController = segue.destinationViewController as! DetailViewController
 detailViewController.tweetar = tweetsBackup
 }
+    //trying to implement the segue
+else if (segue.identifier) == "SegueToSpecificProfilePage" {
+    
+    
+    let button = sender as! UIButton
+    let view = button.superview!
+    let cell = view.superview as! TweetsCell
+    
+    let indexPath = tableView.indexPathForCell(cell)
+    let tweet = tweets![indexPath!.row]
+    let user = tweet.user
+    
+    let profilePageViewController = segue.destinationViewController as! SpecificProfileViewController
+    SpecificProfileViewController.user = user
+    
+    }
+    
+    
+    //finished tyring to implement the segue [ for the specific Profile VIew Controller]
 }
+    
+    
+    
     func cellData(sender: AnyObject?) {
         let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
         let tweetss = tweets![indexPath!.row]
