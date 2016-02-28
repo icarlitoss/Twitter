@@ -30,6 +30,7 @@ class User: NSObject {
     var dictionary: NSDictionary
     var follower: Int?
     var following: Int?
+    var tweetsnumba: Int?
     
     
 
@@ -39,11 +40,16 @@ class User: NSObject {
         
         follower = dictionary["followers_count"] as? Int
         following = dictionary["friends_count"] as? Int
+        tweetsnumba = dictionary["statuses_count"] as? Int
         
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
+        
+     
+        
+        
     }
     //setting up the logout function
     func logout() {

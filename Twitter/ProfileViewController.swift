@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var numOfFollowers: UILabel!
     @IBOutlet weak var tagline: UILabel!
 
+    @IBOutlet weak var numOfTweets: UILabel!
     
     
     override func viewDidLoad() {
@@ -27,16 +28,21 @@ class ProfileViewController: UIViewController {
         userName.text = User.currentUser?.name
         handle.text = User.currentUser?.screenname
         tagline.text = User.currentUser?.tagline
-        if let followersdsdfs = User.currentUser?.follower!  {
-            numOfFollowers.text = String(followersdsdfs)
+        if let followerss = User.currentUser?.follower!  {
+            numOfFollowers.text = String(followerss)
         }else {
             numOfFollowers.text = "0"
         }
         
-        if let flowingasdad = User.currentUser?.following!  {
-            numOfFollowing.text = String(flowingasdad)
+        if let flowingg = User.currentUser?.following!  {
+            numOfFollowing.text = String(flowingg)
         }else {
             numOfFollowing.text = "0"
+        }
+        if let tweetss = User.currentUser?.tweetsnumba!  {
+            numOfTweets.text = String(tweetss)
+        }else {
+            numOfTweets.text = "0"
         }
 
         // Do any additional setup after loading the view.
