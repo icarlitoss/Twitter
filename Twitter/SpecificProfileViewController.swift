@@ -7,9 +7,20 @@
 //
 
 import UIKit
-
+import SwiftMoment
 class SpecificProfileViewController: UIViewController {
  
+    var replyTo: String?
+    var replyID: Int?
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    var tweetar: Tweet!
+ 
+       private var detailTweets =  [Tweet]()
+    
+ //   var user: User?
+   /// var tweet: Tweet?
+    
     @IBOutlet weak var banner: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -20,10 +31,20 @@ class SpecificProfileViewController: UIViewController {
 
     @IBOutlet weak var numOfTweets: UILabel!
     
+    //var follower: Int?
+    //var following: Int?
+    //var tweetsnumba: Int?
+    
+    var profileBackgroundImageURL: String?
+//let userDefaults = NSUserDefaults.standardUserDefaults()
+  //  private var detailTweets =  [Tweet]()
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        showProfile()
+        /*
         banner.setImageWithURL(NSURL(string: User.currentUser!.profileBackgroundImageURL!)!)
         //banner.setImageWithURL((user?.profileBackgroundImageURL)!)
         banner.sizeToFit()
@@ -51,8 +72,33 @@ class SpecificProfileViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+        
+       // let id = user?.id
+        
+    
+*/
     }
 
+    func showProfile(){
+        userName.text = tweetar!.user!.name!
+        handle.text = ("@\(tweetar!.user!.screenname!)")
+        // detailTweetContentText.text = tweetar!.text!
+        profileImage.setImageWithURL(NSURL(string: tweetar!.user!.profileImageUrl!)!)
+        //timeLabel.text = timeSpanText  //displays timeSpan
+        replyID = tweetar.id!
+        //print("is issssss\(replyID)")
+        tagline.text = tweetar!.user!.name
+        banner.setImageWithURL(NSURL(string: tweetar!.user!.profileBackgroundImageURL!)!)
+        
+        numOfFollowers.text = String(tweetar!.user!.follower! )
+        numOfFollowing.text = String(tweetar!.user!.following! )
+        numOfTweets.text = String(tweetar!.user!.tweetsnumba! )
+        //let userID = user?.userID
+        
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

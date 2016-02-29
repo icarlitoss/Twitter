@@ -34,6 +34,7 @@ class User: NSObject {
     
     var profileBackgroundImageURL: String?
     
+   // var userID: Int?
 
     
     init(dictionary: NSDictionary){
@@ -50,7 +51,8 @@ class User: NSObject {
        
     profileBackgroundImageURL = dictionary["profile_background_image_url_https"] as? String
         
-     
+    //userID = dictionary["id"] as! Int
+
         
         
     }

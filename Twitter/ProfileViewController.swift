@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var banner: UIImageView!
@@ -32,6 +33,10 @@ class ProfileViewController: UIViewController {
         userName.text = User.currentUser?.name
         handle.text = User.currentUser?.screenname
         tagline.text = User.currentUser?.tagline
+        
+     
+        
+        
         if let followerss = User.currentUser?.follower!  {
             numOfFollowers.text = String(followerss)
         }else {

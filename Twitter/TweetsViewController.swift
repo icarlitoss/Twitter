@@ -189,6 +189,23 @@ let detailViewController = segue.destinationViewController as! DetailViewControl
 detailViewController.tweetar = tweetsBackup
 }
     
+else if (segue.identifier) == "SegueToSpecificProfilePage" {
+    
+    
+    let button = sender as! UIButton
+    let view = button.superview!
+    let cell = view.superview as! TweetsCell
+    
+    //let indexPath = tableView.indexPathForCell(cell)
+    //let tweet = tweets![indexPath!.row]
+    //let user = tweet.user
+    
+    let specificProfileViewController = segue.destinationViewController as! SpecificProfileViewController
+   // specificProfileViewController = user
+    specificProfileViewController.tweetar = tweetsBackup
+    
+    }
+
     
     /*//trying to implement the segue
 else if (segue.identifier) == "SegueToSpecificProfilePage" {
