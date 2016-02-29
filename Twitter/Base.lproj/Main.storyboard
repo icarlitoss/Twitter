@@ -111,7 +111,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vFl-sc-AaX"/>
                     <connections>
+                        <outlet property="banner" destination="y3a-lf-9hM" id="xp9-DL-9gg"/>
                         <outlet property="handle" destination="iJ5-Z0-2nC" id="TZL-as-w8w"/>
                         <outlet property="numOfFollowers" destination="hgx-TS-LuF" id="TtN-il-z9Z"/>
                         <outlet property="numOfFollowing" destination="zjL-It-8gd" id="ych-7V-WYF"/>
@@ -123,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vd-Rs-mep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3755" y="420"/>
+            <point key="canvasLocation" x="3796" y="277"/>
         </scene>
         <!--Home-->
         <scene sceneID="LcF-AY-62g">
@@ -268,6 +270,9 @@
                                                         <constraint firstAttribute="height" constant="65" id="F7c-ot-2GX"/>
                                                         <constraint firstAttribute="width" constant="65" id="vtN-5V-1cA"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <segue destination="tNh-pX-AZI" kind="push" identifier="SegueToSpecificProfilePage" id="Odi-ZO-zDq"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -432,6 +437,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Icon-Me" id="9g1-J8-kAC"/>
                     <connections>
+                        <outlet property="banner" destination="fWL-dg-nWe" id="Thk-OY-QWG"/>
                         <outlet property="handle" destination="Lg9-Mz-CpY" id="m0y-aJ-FL1"/>
                         <outlet property="numOfFollowers" destination="kgd-JV-cD6" id="1HJ-eR-8Hd"/>
                         <outlet property="numOfFollowing" destination="dOJ-TR-HX2" id="1Gy-gx-JBb"/>
@@ -694,6 +700,6 @@
         <image name="retweet-action-inactive" width="75" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nmC-OK-fJ9"/>
+        <segue reference="P15-RD-Jrb"/>
     </inferredMetricsTieBreakers>
 </document>

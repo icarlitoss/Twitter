@@ -285,7 +285,17 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
 // up to here
     
-    
-    
+    //banner
+    func getUserBanner(id: Int, params: NSDictionary?, completion: (error: NSError?) -> () ){
+        GET("1.1/users/profile_banner.json", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            print("got user banner")
+            completion(error: nil)
+            }, failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("did not get user banner")
+                completion(error: error)
+            }
+        )
+
+    }
     
 }

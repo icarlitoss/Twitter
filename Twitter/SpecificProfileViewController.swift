@@ -9,8 +9,8 @@
 import UIKit
 
 class SpecificProfileViewController: UIViewController {
-
-    //@IBOutlet weak var banner: UIImageView!
+ 
+    @IBOutlet weak var banner: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var handle: UILabel!
@@ -23,6 +23,11 @@ class SpecificProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        banner.setImageWithURL(NSURL(string: User.currentUser!.profileBackgroundImageURL!)!)
+        //banner.setImageWithURL((user?.profileBackgroundImageURL)!)
+        banner.sizeToFit()
+        
         
         profileImage.setImageWithURL(NSURL(string: User.currentUser!.profileImageUrl!)!)
         userName.text = User.currentUser?.name

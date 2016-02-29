@@ -185,12 +185,12 @@ if (segue.identifier == "cellToDetails") {
 cellData(sender)
     
     
-    
-    
 let detailViewController = segue.destinationViewController as! DetailViewController
 detailViewController.tweetar = tweetsBackup
 }
-    //trying to implement the segue
+    
+    
+    /*//trying to implement the segue
 else if (segue.identifier) == "SegueToSpecificProfilePage" {
     
     
@@ -207,12 +207,12 @@ else if (segue.identifier) == "SegueToSpecificProfilePage" {
     
     }
     
+   
+   */ //finished tyring to implement the segue [ for the specific Profile VIew Controller]
+
     
-    //finished tyring to implement the segue [ for the specific Profile VIew Controller]
 }
-    
-    
-    
+
     func cellData(sender: AnyObject?) {
         let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
         let tweetss = tweets![indexPath!.row]
